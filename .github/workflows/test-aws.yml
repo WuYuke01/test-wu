@@ -22,4 +22,4 @@ jobs:
           aws-region: ap-northeast-1
 
       - name: Deploy to S3
-        run: aws s3 sync . s3://a-nd01-st-tn-poc3-t-auditlogs0000
+        run: aws s3 sync . s3://test-oidc1
