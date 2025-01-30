@@ -5,14 +5,14 @@ jobs:
       id-token: write
       contents: read
     steps:
-      - name: Checkout
+      - name: Checkout code
         uses: actions/checkout@v2
-      
-      - name: Configure AWS credentials
+
+      - name: Assume AWS Role
         uses: aws-actions/configure-aws-credentials@v1
         with:
           role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
           aws-region: ap-northeast-1
-      
+
       - name: Deploy to S3
-        run: aws s3 sync . s3://your-s3-bucket/
+        run: aws s3 sync . s3://a-nd01-st-tn-poc3-t-auditlogs0000
